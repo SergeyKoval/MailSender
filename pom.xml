@@ -38,6 +38,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
+                            <finalName>mail-tester</finalName>
                             <archive>
                                 <manifest>
                                     <mainClass>com.maps51.edapt.mailtester.Main</mainClass>
