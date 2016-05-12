@@ -1,0 +1,93 @@
+<mails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MailConfig.xsd">
+    <mail name="provisionSender9925">
+        <host>mailgate.tashkent.org</host>
+        <port>9925</port>
+        <email>provision@e-dapt.net</email>
+        <senderName>Provision sender:9925</senderName>
+        <authentication>
+            <username>botf.mail.2013</username>
+            <password>Frame1hawk</password>
+        </authentication>
+        <subject>Provision code</subject>
+        <body>9925: Your code is: ${code}</body>
+    </mail>
+    <mail name="provisionSender25">
+        <host>ex002.botf03.net</host>
+        <port>25</port>
+        <email>provision@e-dapt.net</email>
+        <senderName>Provision sender:25</senderName>
+        <subject>Provision code</subject>
+        <body>25: Your code is: ${code}</body>
+    </mail>
+    <mail name="provisionSender35">
+        <host>ex002.botf03.net</host>
+        <port>35</port>
+        <email>provision@botf03.net</email>
+        <senderName>Provision sender:35</senderName>
+        <authentication startTls="false">
+            <username>provision@botf03.net</username>
+            <password>Frame1hawk</password>
+        </authentication>
+        <subject>Provision code</subject>
+        <body>35: Your code is: ${code}</body>
+    </mail>
+    <mail name="provisionSender45">
+        <host>ex002.botf03.net</host>
+        <port>45</port>
+        <email>provision@botf03.net</email>
+        <senderName>Provision sender:45</senderName>
+        <authentication>
+            <username>provision@botf03.net</username>
+            <password>Frame1hawk</password>
+        </authentication>
+        <subject>Provision code</subject>
+        <body>45: Your code is: ${code}</body>
+    </mail>
+    <mail name="provisionSenderRichText" contentType="text/html">
+        <host>ex002.botf03.net</host>
+        <port>35</port>
+        <email>provision@botf03.net</email>
+        <senderName>Provision sender:35</senderName>
+        <authentication startTls="false">
+            <username>provision@botf03.net</username>
+            <password>Frame1hawk</password>
+        </authentication>
+        <subject>Provision code</subject>
+        <body>
+            <![CDATA[
+                <body>
+                    <table align="center" border="1" cellpadding="0" cellspacing="0" width="600">
+                        <tr>
+                            <td>
+                                This is security.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="padding: 40px 0 30px 0; background-color:#E26D6D">
+                                <img src="https://cdn2.iconfinder.com/data/icons/airport-set-2/512/6-512.png"
+                                    alt="This is security" width="512" height="512" style="display: block;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Your code: ${code}
+                            </td>
+                        </tr>
+                    </table>
+                </body>
+            ]]>
+        </body>
+    </mail>
+    <mail name="provisionSenderBench">
+        <host>smtp.gmail.com</host>
+        <port>587</port>
+        <email>pennyclark008@gmail.com</email>
+        <senderName>Provision sender:penny clark</senderName>
+        <authentication>
+            <username>pennyclark008@gmail.com</username>
+            <password>pClark008</password>
+        </authentication>
+        <subject>Provision code</subject>
+        <body>Test. Your code is: ${code}</body>
+    </mail>
+</mails>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="mails" type="mailsType"/>
+
+    <xs:complexType name="receiversType" mixed="true">
+        <xs:sequence>
+            <xs:element type="xs:string" name="direct" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="cc" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="bcc" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="authenticationType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="sslTrust" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="username" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="password" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="startTls" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="mailType">
+        <xs:all>
+            <xs:element type="xs:string" name="host" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="port" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="email" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="senderName" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="xs:string" name="subject" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="xs:string" name="body" minOccurs="1" maxOccurs="1"/>
+            <xs:element type="receiversType" name="receivers" minOccurs="0" maxOccurs="1"/>
+            <xs:element type="authenticationType" name="authentication" minOccurs="0" maxOccurs="1"/>
+        </xs:all>
+        <xs:attribute type="xs:string" name="name" use="required"/>
+        <xs:attribute type="xs:boolean" name="sendPartial" use="optional"/>
+        <xs:attribute type="xs:string" name="transport" use="optional"/>
+        <xs:attribute type="xs:string" name="contentType" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="mailsType">
+        <xs:sequence>
+            <xs:element type="mailType" name="mail" maxOccurs="unbounded" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
